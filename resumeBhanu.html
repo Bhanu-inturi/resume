@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Inturi Bhanu Sri — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Liberation+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .toolbar { display: none !important; }
+    .page { box-shadow: none; max-width: 100%; padding: 0.6in 0.7in; }
+  }
+
+  body {
+    background: #e8e8e8;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    color: #000;
+    padding: 2rem 1rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .toolbar {
+    max-width: 780px;
+    margin: 0 auto 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+    border: 1px solid #999;
+    background: white;
+    color: #333;
+  }
+
+  .btn:hover { background: #f0f0f0; }
+
+  .btn-print {
+    background: #222;
+    color: white;
+    border-color: #222;
+  }
+
+  .btn-print:hover { background: #444; }
+
+  /* Resume page */
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: white;
+    padding: 0.65in 0.75in;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 6pt;
+  }
+
+  .name {
+    font-size: 20pt;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    margin-bottom: 4pt;
+    color: #000;
+  }
+
+  .contact-line {
+    font-size: 10pt;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 6pt;
+    align-items: center;
+    line-height: 1.6;
+  }
+
+  .contact-line a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .contact-line a:hover { color: #333; }
+
+  .sep {
+    color: #666;
+    font-size: 9pt;
+  }
+
+  /* Divider */
+  hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 5pt 0;
+  }
+
+  hr.thick {
+    border-top: 2px solid #000;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 8pt;
+  }
+
+  .section-title {
+    font-size: 11pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 3pt;
+    color: #000;
+  }
+
+  /* Summary */
+  .summary {
+    font-size: 10pt;
+    line-height: 1.5;
+    text-align: justify;
+    color: #000;
+  }
+
+  /* Education */
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1pt;
+  }
+
+  .edu-school {
+    font-weight: bold;
+    font-size: 10.5pt;
+  }
+
+  .edu-date {
+    font-size: 10pt;
+    font-style: italic;
+  }
+
+  .edu-degree {
+    font-size: 10.5pt;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 1pt;
+  }
+
+  .edu-cgpa {
+    font-size: 10pt;
+  }
+
+  /* Skills */
+  .skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2pt;
+  }
+
+  .skill-row {
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  .skill-row strong {
+    font-weight: bold;
+  }
+
+  /* Projects / Experience items */
+  .item {
+    margin-bottom: 7pt;
+  }
+
+  .item:last-child {
+    margin-bottom: 0;
+  }
+
+  .item-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4pt;
+    margin-bottom: 1pt;
+  }
+
+  .item-title {
+    font-size: 10.5pt;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .item-links {
+    display: flex;
+    gap: 6pt;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .item-link {
+    font-size: 9pt;
+    color: #000;
+    text-decoration: underline;
+    font-family: Arial, sans-serif;
+  }
+
+  .item-link:hover { color: #333; }
+
+  .item-tech {
+    font-size: 10pt;
+    font-style: italic;
+    color: #000;
+    margin-bottom: 2pt;
+  }
+
+  .item-meta {
+    font-size: 10pt;
+    color: #000;
+    margin-bottom: 2pt;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .item-meta-org {
+    font-style: italic;
+  }
+
+  .item-meta-date {
+    font-style: italic;
+  }
+
+  ul.bullets {
+    list-style: none;
+    padding-left: 12pt;
+  }
+
+  ul.bullets li {
+    font-size: 10pt;
+    line-height: 1.55;
+    color: #000;
+    position: relative;
+    padding-left: 8pt;
+  }
+
+  ul.bullets li::before {
+    content: '-';
+    position: absolute;
+    left: 0;
+    color: #000;
+  }
+
+  /* Certifications */
+  .cert-item {
+    font-size: 10pt;
+    line-height: 1.6;
+  }
+
+  .cert-item span {
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<!-- Toolbar -->
+<div class="toolbar">
+  <a href="https://portfolio-git-main-bhanu-sri-inturi-s-projects.vercel.app/" target="_blank" class="btn">
+    View Portfolio ↗
+  </a>
+  <button class="btn btn-print" onclick="window.print()">
+    Print / Save as PDF
+  </button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="name">INTURI BHANU SRI</div>
+    <div class="contact-line">
+      <a href="mailto:bhanu.inturi7@gmail.com">bhanu.inturi7@gmail.com</a>
+      <span class="sep">|</span>
+      <a href="tel:+918309315805">8309315805</a>
+      <span class="sep">|</span>
+      <a href="https://linkedin.com/in/bhanu-inturi" target="_blank">linkedin: bhanu-inturi</a>
+      <span class="sep">|</span>
+      <a href="https://github.com/Bhanu-inturi" target="_blank">github: github.com/Bhanu-inturi</a>
+      <span class="sep">|</span>
+      <a href="https://portfolio-git-main-bhanu-sri-inturi-s-projects.vercel.app/" target="_blank">portfolio: portfolio-eta-one-uiebvc3bhq.vercel.app</a>
+    </div>
+  </div>
+
+  <hr class="thick"/>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <hr/>
+    <br/>
+    <p class="summary">
+      Computer Science undergraduate focused on building scalable, high-performance systems with strong foundations in data structures, algorithms, and functional problem-solving. Experienced in developing full-stack applications and AI-driven systems, with a growing interest in payment infrastructure, distributed systems, and developer frameworks. Passionate about creating frictionless user experiences, designing robust backend logic, and solving large-scale reliability and performance challenges.
+    </p>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <hr/>
+    <br/>
+    <div class="edu-row">
+      <span class="edu-school">SRM University AP</span>
+      <span class="edu-date">August 2024 – June 2028</span>
+    </div>
+    <div class="edu-degree">B.TECH CSE</div>
+    <div class="edu-cgpa">CGPA: 8.87</div>
+  </div>
+
+  <!-- TECHNICAL SKILLS -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <hr/>
+    <br/>
+    <div class="skills-grid">
+      <div class="skill-row"><strong>Languages:</strong> Python, C++, C, JavaScript</div>
+      <div class="skill-row"><strong>Frontend:</strong> React.js, HTML, CSS, Tailwind CSS</div>
+      <div class="skill-row"><strong>Backend &amp; Systems:</strong> Node.js, Flask, REST APIs, File Handling, OOP Design</div>
+      <div class="skill-row"><strong>Core Concepts:</strong> Data Structures, Algorithms, Functional Thinking, System Design Basics</div>
+      <div class="skill-row"><strong>Tools &amp; Platforms:</strong> Git, GitHub, MySQL, VS Code, Google Cloud, Colab</div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title">Projects</div>
+    <hr/>
+    <br/>
+
+    <!-- Project 1 -->
+    <div class="item">
+      <div class="item-title-row">
+        <span class="item-title">Medical Image Classification — Pneumonia Detection</span>
+        <div class="item-links">
+          <a href="https://bhanu-inturi.github.io/chest-xray-pneumonia-classifier/" target="_blank" class="item-link">[Live Demo]</a>
+          <a href="https://github.com/Bhanu-inturi" target="_blank" class="item-link">[GitHub]</a>
+        </div>
+      </div>
+      <div class="item-tech">Python · PyTorch · GitHub</div>
+      <ul class="bullets">
+        <li>Trained ResNet-50, VGG-19, and custom CNN on 5,216 NIH chest X-ray images</li>
+        <li>Applied transfer learning with ImageNet weights — achieved AUC-ROC of 0.9679</li>
+        <li>Outperformed custom CNN baseline by 10.8% AUC, proving transfer learning advantage</li>
+        <li>Handled class imbalance using Focal Loss and WeightedRandomSampler</li>
+        <li>Deployed interactive web demo via GitHub Pages — publicly accessible</li>
+        <li>Tools: PyTorch, torchvision, Google Colab (Tesla T4 GPU)</li>
+      </ul>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="item">
+      <div class="item-title-row">
+        <span class="item-title">AI Resume Screening Web Application</span>
+        <div class="item-links">
+          <a href="https://github.com/Bhanu-inturi" target="_blank" class="item-link">[GitHub]</a>
+        </div>
+      </div>
+      <ul class="bullets">
+        <li>Developed an AI-powered resume screening system using Flask and Groq LLM API to analyze resumes against job descriptions</li>
+        <li>Implemented PDF text extraction and semantic matching for accurate skill comparison</li>
+        <li>Built features to generate match scores, identify missing skills, and provide personalized improvement suggestions</li>
+        <li>Designed an end-to-end web application integrating backend, frontend, and AI APIs</li>
+      </ul>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="item">
+      <div class="item-title-row">
+        <span class="item-title">Movie Ticket Booking Platform (React.js)</span>
+        <div class="item-links">
+          <a href="https://movie-booking-m0g2zxa0a-bhanu-sri-inturi-s-projects.vercel.app" target="_blank" class="item-link">[Live Demo]</a>
+          <a href="https://github.com/Bhanu-inturi" target="_blank" class="item-link">[GitHub]</a>
+        </div>
+      </div>
+      <ul class="bullets">
+        <li>Built a modern, fully functional movie ticket booking website using React.js and Tailwind CSS</li>
+        <li>Provides an intuitive user experience for browsing movies, selecting seats, choosing showtimes, and completing bookings with a seamless payment flow</li>
+      </ul>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="item">
+      <div class="item-title-row">
+        <span class="item-title">Student Record Management System</span>
+        <div class="item-links">
+          <a href="https://github.com/Bhanu-inturi" target="_blank" class="item-link">[GitHub]</a>
+        </div>
+      </div>
+      <div class="item-tech">Python Tkinter Frontend, C++ Backend</div>
+      <ul class="bullets">
+        <li>Built a Student Record Management System with a Python Tkinter-based GUI frontend and a C++ backend for core logic and data processing</li>
+        <li>Implemented functionalities to add, update, delete, and search student records using OOP concepts, file handling, and seamless frontend-backend interaction</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- OTHER EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Other Experience</div>
+    <hr/>
+    <br/>
+    <div class="item">
+      <div class="item-meta">
+        <span class="item-meta-org">Virtual Internship on Google Cloud Generative AI – SmartBridge &amp; SmartInternz</span>
+        <span class="item-meta-date">05 Nov 2025 – 15 Jan 2026</span>
+      </div>
+      <ul class="bullets">
+        <li>Demonstrated practical application of Generative AI concepts using Google Cloud tools</li>
+        <li>Certificate ID: VIP-AI-2026-30689</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-title">Skills Certification</div>
+    <hr/>
+    <br/>
+    <div class="cert-item">1. <span>IBM AI Developer Course</span> offered on Coursera</div>
+    <div class="cert-item">2. <span>Prompt Engineering using Vertex AI</span> skill badge from the Google Cloud AI Virtual Internship</div>
+  </div>
+
+</div>
+
+</body>
+</html>
